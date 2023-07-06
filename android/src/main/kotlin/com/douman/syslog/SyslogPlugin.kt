@@ -23,16 +23,17 @@ class SyslogPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
-    when (call.method) {
-        "send_log" -> {
-            val tag = call.argument<String>("tag") ?: "flutter";
-            val level = call.argument<Int>("lvl") ?: 4;
-            val message = call.argument<String>("msg") ?: "";
-            Log.println(level, tag, message);
-        }
-        else -> {
-            result.notImplemented()
-        }
+      when (call.method) {
+          "send_log" -> {
+              val tag = call.argument<String>("tag") ?: "flutter";
+              val level = call.argument<Int>("lvl") ?: 4;
+              val message = call.argument<String>("msg") ?: "";
+              Log.println(level, tag, message);
+          }
+          else -> {
+              result.notImplemented()
+          }
+      }
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {

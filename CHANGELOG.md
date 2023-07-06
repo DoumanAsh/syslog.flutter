@@ -1,3 +1,7 @@
+## 0.1.2
+
+* Fix Android compilation
+
 ## 0.1.1
 
 * Add `SysLog.isSupported` property to indicate whether current platform is supported
