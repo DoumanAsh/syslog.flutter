@@ -3,7 +3,9 @@ import 'package:flutter/services.dart';
 
 import 'syslog_platform_interface.dart';
 
+///Platform specific extension
 extension Platform on LogLevel {
+  /// Conversion to system log level
   int get toSysLevel {
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:

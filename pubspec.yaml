@@ -1,6 +1,6 @@
 name: syslog
 description: Wrapper library to send messages to system loggers
-version: 0.1.0
+version: 0.1.1
 homepage: https://github.com/DoumanAsh/syslog.flutter
 
 environment:
