@@ -18,17 +18,18 @@ class SyslogPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var channel : MethodChannel
 
   override fun onAttachedToEngine(@NonNull flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "syslog")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "com.douman.syslog")
     channel.setMethodCallHandler(this)
   }
 
   override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {
       when (call.method) {
           "send_log" -> {
-              val tag = call.argument<String>("tag") ?: "flutter";
-              val level = call.argument<Int>("lvl") ?: 4;
-              val message = call.argument<String>("msg") ?: "";
-              Log.println(level, tag, message);
+              val tag = call.argument<String>("tag") ?: "flutter"
+              val level = call.argument<Int>("lvl") ?: 4
+              val message = call.argument<String>("msg") ?: ""
+              Log.println(level, tag, message)
+              result.success(null)
           }
           else -> {
               result.notImplemented()

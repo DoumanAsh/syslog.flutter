@@ -36,6 +36,6 @@ class MethodChannelSyslog extends SyslogPlatform {
   @override
   Future<void> sendLog(String message, LogLevel? level, String? tag) async {
     final args = {'msg': message, if (level != null) 'lvl': level.toSysLevel, if (tag != null) 'tag': tag};
-    await methodChannel.invokeMethod<String>('send_log', args);
+    await methodChannel.invokeMethod<void>('send_log', args);
   }
 }

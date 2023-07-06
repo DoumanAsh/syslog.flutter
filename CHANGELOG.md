@@ -1,3 +1,7 @@
+## 0.1.3
+
+* Fix Android impl
+
 ## 0.1.2
 
 * Fix Android compilation
